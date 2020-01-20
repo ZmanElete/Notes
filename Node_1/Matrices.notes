@@ -1,0 +1,155 @@
+# ../TableOfContents.notes
+
+Review:
+#project://Node_1/Matrices.notes#64
+#project://Node_1/Matrices.notes#108
+#project://Node_1/Matrices.notes#144
+#project://Node_1/Matrices.notes#153
+
+-= Matrices =-
+[[1, 2]
+ [3, 4]
+ [5, 6]]
+- A Array of arrays
+- This is a 3 x 2 matrix it has 3 rows and 2 columns or it has 3 arrays of length 2
+
+-= Vector =-
+[ 1,
+  2,
+  3,]
+- A Array of numbers many rows, but only 1 column
+- 3 x 1 Vector
+
+-= Vector =-
+1 or 2 or 3
+- A regular number or a 1 x 1 matrix (Multiplication and Addition are treated differently)
+
+-= Representing a linair system with matricies =-
+Liniar Equations:
+    2x + 5y = 10
+    3x + 4y = 24
+Same Matrix:
+    x    y     _
+  [[2,   5,   10]
+   [3,   4,   24]]
+
+
+-= Operations =-
+Simple Opertaions (Column switching, Adding Rows to eachother, row multiplying by scalar):
+# https://www.khanacademy.org/math/precalculus/x9e81a4f98389efdf:matrices/x9e81a4f98389efdf:elementary-matrix-row-operations/a/matrix-row-operations
+Multiply/Divide By Scalar:
+# https://www.khanacademy.org/math/precalculus/x9e81a4f98389efdf:matrices/x9e81a4f98389efdf:multiplying-matrices-by-scalars/v/scalar-multiplication
+
+Addition/Subtraction:
+    - Rules: 
+        1. Two Matrices require the same dimensions
+    - Implimentation:
+        - Add/Subtract corrisponding entries
+        - M + N = R
+        - M[1][1] + N[1][1] = R[1][1]
+        - M[2][1] + N[2][1] = R[2][1] ...etc
+    - Example:
+    2 x 3 + 2 x 3 : Is Defined (Same dimensions)
+    [[1, 2, 3]
+     [4, 5, 6]]
+    +
+    [[ 7,  8,  9]
+     [10, 11, 12]]
+    =
+    [[(1+ 7), ( 2+8), (3+ 9)]
+     [(4+10), (11+5), (6+12)]]
+    =
+    [[ 8, 10, 12]
+     [14, 16, 18]]
+    
+    //Do 1
+    - Practice: # ./Practice/AdditionPractice.notes# - ! 
+
+    - Addition Properties:  
+        - Communative Property: A + B = B + A
+        - Associative Property: A + (B + C) = (A + B) + C
+        - Identiy Property:     A + 0 = A
+        - Inverse Property:     A + (-A) = 0
+        - Closure Property:     A_2x2 + B_2x2 = C_2x2
+
+Zero Matrices:
+    0_3x3 =
+    [[0, 0, 0]
+     [0, 0, 0]
+     [0, 0, 0]]
+    - The same as adding a scalar by 0
+    - A + 0 = A
+
+Multiplication/Division:
+    - Rules:
+        - A_2x3 * B_3x2 = C_2x2
+        1. The columns of the first has to be equal to the rows of the second.
+        2. ORDER MATTERS A * B != B * A
+        3. resulting matix has the dimensions of the rows of the first and columns of the second.
+    - Implimentation:
+        - A_2x3 * B_3x2 = C_2x2
+        1. A[1][1]*B[1][1] + A[1][2]*B[2][1] + A[1][3]*B[3][1] = C[1][1]
+        2. A[1][1]*B[1][2] + A[1][2]*B[2][2] + A[1][3]*B[3][2] = C[1][2]
+        3. A[2][1]*B[1][1] + A[2][2]*B[2][1] + A[2][3]*B[3][1] = C[2][1]
+        4. A[2][1]*B[1][2] + A[2][2]*B[2][2] + A[2][3]*B[3][2] = C[2][2]
+    - Example:
+    2 x (3) * (3) x 2 : Is Defined 1.col == 2.row
+    [0 3 5
+     5 5 2]
+    *
+    [3  4;
+     3 -2
+     4 -2]
+    =
+    [((0*3) + (3*3) + (5*4)), ((0*4) + (3*-2) + (5*-2))
+     ((5*3) + (5*3) + (2*4)), ((5*4) + (5*-2) + (2*-2))]
+    =
+    [29 -16;
+     38   6]
+     //Do 2
+    - Practice: # ./Practice/MultiplicationPractice.notes# - ! 
+    - Properties: 
+        - Associative Property : (AB)C = (CB)A
+        - Distributive Property: A(B + C) = AB + AC
+        - Identity Property    : A * I = A | I * A = A
+        - Zero Matrix Prop     : A_3x2 * 0_2x3 = 0_3x3 
+        - Dimension Property   : Dimensions axb*bxc = axc
+
+
+Identity Matrix:
+    I_3x3 = 
+    [1 0 0;
+     0 1 0;
+     0 0 1]
+     - Same as 1 * 5 = 5
+     - 1 has identity property multipplication
+     - both must be square
+
+Transformation Matrix:
+The Idea:
+# https://www.khanacademy.org/math/precalculus/x9e81a4f98389efdf:matrices/x9e81a4f98389efdf:matrices-as-transformations/e/multiplying_a_matrix_by_a_vector
+How the Transformation Works:
+# https://www.khanacademy.org/math/precalculus/x9e81a4f98389efdf:matrices/x9e81a4f98389efdf:matrices-as-transformations/a/matrices-as-transformations
+- Vectors resemble points on a graph. A transformation matrix can be applied to a Vector to move it.
+- Multiple Vectors can be placed in a matrix and then one multiplication apply to multiple points.
+    moving them all in reference to one another.
+
+Determinant:
+# https://www.khanacademy.org/math/precalculus/x9e81a4f98389efdf:matrices/x9e81a4f98389efdf:determinant-of-2x2-matrix/v/finding-the-determinant-of-a-2x2-matrix
+[a b;
+ c d]
+= a*d - c*d
+// Thats really all the info
+// 2
+- Practice: # ./Practice/Determinant.notes # - ! 
+
+Inverse of Matrix:
+A   = [a b
+       c d]
+A^-1= determinant * [ d -b
+                     -c  a]
+A*A^-1 = I
+    // 2
+    - Practice: # ./Practice/InversePractice.notes # - !
+//More on inverse
+# https://www.khanacademy.org/math/precalculus/x9e81a4f98389efdf:matrices/x9e81a4f98389efdf:intro-to-matrix-inverses/v/inverse-matrix-part-1

@@ -1,0 +1,19 @@
+Link Home:
+    #project://Node_1/Matrices.notes#64 //Line number
+
+1. 
+4 x 2 + 4 x 2 : Is Defined same dimensions
+[[ 15, -9]
+ [  4,  2]
+ [ 20, -5]
+ [-14,  7]]
+-
+[[23,  6]
+ [ 8,  2]
+ [ 1, 31]
+ [-6,  7]]
+=
+[[ -8, -15]
+ [ -4,   0]
+ [ 19, -26]
+ [-20,   0]]
